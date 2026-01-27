@@ -1,0 +1,16 @@
+
+
+
+
+
+
+<form method="post">
+    {% csrf_token %}
+
+    {{ userform.as_p }}
+
+    {{ regform.as_p }}
+    
+    <button type="submit">submit</button>
+
+</form>

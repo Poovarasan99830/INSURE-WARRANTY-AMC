@@ -1,4 +1,16 @@
-from django.shortcuts import render
+from django.shortcuts import render,HttpResponse
+from .forms import Appliance_form
 
-# Create your views here.
-https://chatgpt.com/share/695dd42b-824c-800a-bb95-a3960aa54e0a
+def apliance(request):
+    if request.method=='POST':
+        a_form=Appliance_form(request.POST)
+        a_form.save()
+        return HttpResponse('saved')
+    else:
+        a_form=Appliance_form()
+    return render(request,'appliance.html',{'form':a_form})
+
+
+
+    
+
