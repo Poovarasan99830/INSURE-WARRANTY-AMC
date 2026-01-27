@@ -1,0 +1,53 @@
+.navbar{
+    background-color: #e3f2fd;
+
+}
+.navbar-expand-lg bg-body-tertiary{
+    background-color: #e3f2fd;
+     width: 1300px;
+
+}
+
+.navbar-brand{
+    color:red;
+     font-size: 30px;
+}
+
+.nav-link active{
+    color: blue;
+}
+
+.main_div{
+    background-color: #e3f2fd; 
+    width: 1300px;
+     height: 72px; 
+     display: inline-flex;
+}
+
+   
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+table th, table td {
+  border: 2px solid rgb(224, 222, 222); /* deep red */
+  padding: 10px;
+  text-align: left;
+}
+    th {
+      background-color:rgba(219, 209, 209, 0.616);
+    }
+
+
+
+.alerts{
+    background-color: white;
+    width: 800px;
+    height: 150px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    color: navy;
+   
+}
+
