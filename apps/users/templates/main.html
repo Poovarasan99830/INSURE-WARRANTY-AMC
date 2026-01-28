@@ -13,15 +13,16 @@
 </head>
 <body>
   
-    
-  </div>
-</nav>
-    
 
+   <!-- <script src="{% static 'prompt.js' %}"></script> -->
+
+    
+   
 <nav class="navbar" data-bs-theme="light">
   <nav class="navbar navbar-expand-lg bg-body-tertiary" >
   <div class="container-fluid" style="width: 1300px;">
-    <a class="navbar-brand" style="color: red; font-style: italic;" >WARRANTYHUB</a>
+    
+    <a class="navbar-brand" style="color: red; " >WarrantyHub</a>
   
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -47,7 +48,7 @@
     </div>
   </div>
 </nav>
-</nav><br>
+</nav>
 
 <div class="main_div" >
 <div  style="  border: 2px solid blue; width: 240px; border-radius: 5px; color: aliceblue; text-align: center;position: relative; left: 50px;">
@@ -67,27 +68,24 @@
 <div style=" background-color: red; width: 238px; height: 30px;">Expired Contracts </div><div style="background-color:rgb(253, 66, 66); width: 238px; height: 40px;">{{ex}}</div>
 </div>
 
-
-
-</div><br>
-<br>
-
-<div class="alerts">
-  <div style="display: block;">Expiry Alerts</div>
-
-    <bold style="color: black;">Reminder: </bold>
-   
-    
   
+</div>
+<br>
+<div style="background-color: #e3f2fd; width: 1300px; height: 160px;">
+<div class="alerts" style="border-radius: 10px; position: relative;top: 10px;border: 2px solid rgb(233, 233, 233);">
+  <div style="display: block;">Expiry Alerts</div>
+      <div style="background-color: white; width: 700px; height: 50px; border: 2px  solid rgb(223, 223, 223); border-radius: 5px; position: relative ; left: 20px;">  <i class="fa-solid fa-bell fa-bounce" style="color: #f3712b;"></i>Reminder:
+    {%for i in app%} 
+    <span style="color: #19c430;">{{i.ex_soon}}</span>
+    {%endfor%}</div>
+
+       <div style="background-color: white; width: 700px; height: 50px; border: 2px  solid rgb(223, 223, 223); border-radius: 5px; position: relative ; left: 20px; top: 10px;"> <i class="fa-regular fa-bell" style="color: #f3712b;"></i> Notice:
   </div>
 
 </div>
+<div style="background-color: navajowhite; width: 300px; height: 100px; position: relative ; left: 850px; bottom: 120px; border-radius: 10px; color: navy;" >Renewal Reminder<br><button style="background-color: #19c430; border: 2px solid green; border-radius: 10px; position: relative;left: 50px;top: 20px;" >Renew AMC Now!</button></div>
 
-
-
-
-
-
+</div><br>
 
 <table>
 
@@ -98,15 +96,19 @@
   <th>Warranty/AMC status</th>
   <th>Actions</th>
   </tr>
-
+ 
   {% for i in app%}
 
   <tr>
-    <td>{{i.Product}}</td>
+    <td>
+          
+           
+            {{i.Product}}</td>
     <td>{{i.Brand}}</td>
     <td>{{i.Purchase_Date}}</td>
 
     {% if i.status == "Expired" %}
+   
         <td style="text-align: left;"><mark style="background-color: red; border-radius: 6px; color: #e3f2fd;" >Expired (Expired on  {{ i.delta }}   ) </mark></td>
     {% else %}
         <td  style="text-align: left;"> <mark style="background-color: #19c430; border-radius: 6px; color: #e3f2fd;"  >Active (Active on {{ i.delta }} ,{{i.time}}  )         </mark></td>

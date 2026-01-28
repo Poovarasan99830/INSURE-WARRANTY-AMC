@@ -29,6 +29,7 @@ def Users(request):
 
 from apps.appliances.models  import Appliance
 from datetime import timedelta,date
+@login_required
 def main(request):
     app=Appliance.objects.order_by("Purchase_Date")
     total=app.count()
@@ -51,13 +52,13 @@ def main(request):
             if i.time==1 :
                 soon+=1
 
-            i.ex_soon=i.Product ,i.time  if i.time>=1 and i.time<=2 else ""
+            i.ex_soon=f"{i.Product} Warranty Expiring in {i.time} days" if i.time==1 else ""
         
             
 
 
             
-    return render(request,"main.html",{"app":app,'total':total,'ex':ex,'ac':ac,'soon':soon,})
+    return render(request,"main.html",{"app":app,'total':total,'ex':ex,'ac':ac,'soon':soon})
 
     
         
