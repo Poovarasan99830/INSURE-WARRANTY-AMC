@@ -55,9 +55,6 @@ def main(request):
             i.ex_soon=f"{i.Product} Warranty Expiring in {i.time} days" if i.time==1 else ""
         
             
-
-
-            
     return render(request,"main.html",{"app":app,'total':total,'ex':ex,'ac':ac,'soon':soon})
 
     
@@ -77,3 +74,11 @@ def login(request):
 def logout(request):
     auth_logout(request)
     return redirect('login')
+
+
+
+def index(request):
+    return render(request,'index.html')
+
+def files(request):
+    return render(request,'files.html')

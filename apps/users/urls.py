@@ -6,11 +6,11 @@ from django.urls import path
 from apps.users import views
 
 
-
-
 urlpatterns =[ 
+    path('files/',views.files,name='files'),
+    
     path('user/',views.Users,name="user"),
-    path('',views.login,name="login"),
+    path('login/',views.login,name="login"),
     path('logout/',views.logout,name='logout'),
     path('main/',views.main,name="main"),]
 
