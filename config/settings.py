@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-gry+j2!rgxx^z@lpa-v5e=iq3_lbu9tn3x)6h@wf7*0$@wv=6v
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 
 # Application definition
@@ -50,6 +50,8 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 ROOT_URLCONF = 'config.urls'
 
@@ -117,4 +119,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.0/howto/static-files/
 
 STATIC_URL = 'static/'
+
+
+LOGIN_URL='login'
+LOGIN_REDIRECT_URL='main'
+LOGOUT_REDIRECT_URL='login'
+
 
